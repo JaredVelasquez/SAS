@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 require("./config/Connection.mongodb");
+var indexRouter = require('./routes/index');
 
 var app = express();
 
@@ -18,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(require('./routes/index'));
+app.use('/', indexRouter);
 app.use(require('./routes/profile.controller'));
 
 // catch 404 and forward to error handler
