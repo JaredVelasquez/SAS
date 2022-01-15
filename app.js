@@ -4,9 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var profileRouter = require('./routes/profile.controller');
-var indexRouter = require('./routes/index');
 require("./config/Connection.mongodb");
 
 var app = express();
