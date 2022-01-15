@@ -88,4 +88,12 @@ router.post('/login', async (req, res)=>
     
 });
 
+router.get('/profiles', async (req, res)=> {
+    const Profiles = await profile.find();
+    if(!Profiles)
+    res.status(401).send('Profile instance is empty.');
+    
+    res.status(200).send(Profiles);
+});
+
 module.exports = router;
